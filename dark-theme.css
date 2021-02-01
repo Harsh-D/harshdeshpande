@@ -11,7 +11,7 @@ body {
   margin: 0px;
   max-width: 1000px;
   margin: auto;
-  background-color: rgb(0, 0, 0);
+  background-color: #111827;
 }
 
 .container {
@@ -38,11 +38,12 @@ body {
 }
 
 .navigation {
-  background-color: var(--off-white);
+  background-color: #1F2937;
   color: var(--primary-color);
   padding: 1rem;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
+  box-shadow: 5px 10px;
 }
 
 .navigation .nav-brand {
@@ -74,7 +75,7 @@ body {
 
 .hero .hero-heading {
   text-align: center;
-  color: var(--dark-gray);
+  color: aliceblue ;
   margin-bottom: 5px;
 }
 
@@ -92,19 +93,21 @@ body {
 .section {
   padding: 1rem;
   text-align: center;
+  color :aliceblue; 
 }
 
 .ow {
-  background-color: var(--off-white);
+  background-color:#374151;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+  color :aliceblue; 
 }
 
 .footer {
   /* margin-top: 1rem; */
-  background-color: var(--primary-color);
+  background-color: #374151;
   padding: 2rem 1rem 1rem 1rem;
   color: white;
   text-align: center;
@@ -137,7 +140,7 @@ body {
 
 .footer .social-icon.github {
   width: 1.1rem;
-  fill: white;
+  fill: aliceblue;
 }
 
 .link-primary {
@@ -172,6 +175,7 @@ body {
 
 .blog-heading {
   margin-bottom: 5px;
+  color: aliceblue;
 }
 
 .blog-heading:hover {
@@ -181,17 +185,18 @@ body {
 
 .blog-description {
   margin-top: 10px;
+  color: aliceblue;
 }
 
 .blog-link {
   text-decoration: none;
-  color: black;
+  color: aliceblue;
 }
 
 .goto-arrow {
   font-family: "Courier New", Courier, monospace;
   background-color: var(--primary-color);
-  color: white;
+  color: aliceblue;
   padding: 0.3rem 0.6rem;
   border-radius: 50%;
   font-size: 1rem;
@@ -209,4 +214,26 @@ body {
 
 .projects-list li {
   padding-top: 0.5rem;
+  color : aliceblue;
+}
+
+.theme-toggle{
+  background-color : var(--primary-color);
+  outline: none;
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+.theme-toggle :hover{
+  background-color: black;
+}
+.theme-toggle :active{
+  background-color: black;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }

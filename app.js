@@ -2,10 +2,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const themeStylesheet = document.getElementById('theme');
-    /*const storedTheme = localStorage.getItem('theme');
+    const storedTheme = localStorage.getItem('theme');
     if(storedTheme){
         themeStylesheet.href = storedTheme;
-    }*/
+    }
     const themeToggle = document.getElementById('theme-toggle');
     themeToggle.addEventListener('click', () => {
         // if it's light -> go dark
@@ -18,6 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
             themeToggle.innerText = 'Switch to dark mode';
         }
         // save the preference to localStorage
-        //localStorage.setItem('theme',themeStylesheet.href)  
+        localStorage.setItem('theme',themeStylesheet.href)  
     })
 })

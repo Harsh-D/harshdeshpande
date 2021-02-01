@@ -92,6 +92,7 @@ body {
 .section {
   padding: 1rem;
   text-align: center;
+  color: black;
 }
 
 .ow {
@@ -100,6 +101,7 @@ body {
   border-bottom-right-radius: 1rem;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+  color: black;
 }
 
 .footer {
@@ -172,6 +174,7 @@ body {
 
 .blog-heading {
   margin-bottom: 5px;
+  color: black;
 }
 
 .blog-heading:hover {
@@ -181,6 +184,7 @@ body {
 
 .blog-description {
   margin-top: 10px;
+  color: black;
 }
 
 .blog-link {
@@ -209,4 +213,25 @@ body {
 
 .projects-list li {
   padding-top: 0.5rem;
+  color : black;
+}
+.theme-toggle{
+  background-color : var(--primary-color);
+  outline: none;
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+.theme-toggle :hover{
+  background-color: black;
+}
+.theme-toggle :active{
+  background-color: black;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
