@@ -3,108 +3,377 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Harsh Deshpande</title>
-    <!--<link href="style.css" rel="stylesheet" />-->
-    <link rel="stylesheet" href="dark-theme.css" />
-    <link rel="stylesheet" href="flex-image-styles.scss" />
-    <link id="theme" rel="stylesheet" href="light-theme.css" />
-    <link rel="icon" type="image/png" href="./images/favicon.png" />
-    <script src="app.js" type="text/javascript"></script>
+    <title>Harsh Deshpande · Senior Software Engineer</title>
+    <meta name="description" content="Senior Software Engineer at WSAudiology. Building cloud-native, event-driven hearing-care platforms with .NET, React, Kubernetes and Azure.">
+    <meta name="theme-color" content="#0d1117">
+    <meta property="og:title" content="Harsh Deshpande · Senior Software Engineer">
+    <meta property="og:description" content="Full-stack engineer in the .NET and React ecosystems — DDD microservices, event-driven architecture, Kubernetes on Azure.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="./images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // apply saved theme before first paint to avoid a flash
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');
+    </script>
+    <script src="script.js" defer></script>
 </head>
-<body>
-    <nav class="navigation container">
-        <div class="nav-brand">
-            Change Theme <br>
-            <label class="switch">
-                <input type="checkbox" id = "theme-toggle">
-                <span class="slider round"></span>
-            </label>
-        </div>
-        <ul class="list-non-bullet nav-pills">
-            <li class="list-item-inline">
-                <a href="/" class="link link-active">home</a>
-            </li>
-            <li class="list-item-inline">
-                <a href="/projects.html" class="link">projects</a>
-            </li>
-            <li class="list-item-inline">
-                <a href="/blogs.html" class="link">blogs</a>
-            </li>
+<body id="top">
+
+    <!-- ================= NAV ================= -->
+    <nav class="navbar" aria-label="Primary">
+        <a class="brand" href="#top">
+            <span class="brand-mark">H</span>
+            <span class="brand-text">harsh<span class="accent">.</span>dev</span>
+        </a>
+        <ul class="nav-links" role="list">
+            <li><a class="nav-link" href="#about">about</a></li>
+            <li><a class="nav-link" href="#experience">experience</a></li>
+            <li><a class="nav-link" href="#skills">skills</a></li>
+            <li><a class="nav-link" href="#projects">projects</a></li>
+            <li><a class="nav-link" href="#contact">contact</a></li>
         </ul>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            </button>
+            <a class="btn btn-primary btn-sm nav-cta" href="#contact">say hi</a>
+        </div>
     </nav>
 
-    <header class="hero">
-        <img src="./images/hero.svg" class="hero-img">
-        <h1 class="hero-heading">Harsh Deshpande</h1>
-        <h2 class="hero-subheading">dev<br><br> "Little progress every day..."</h2>
-    </header>
-    <section class="section">
-        <h1>about me</h1>
-        <p>I am working as a Software Engineer at &nbsp; <a href="https://www.wsa.com/" target="_blank" class="link link-primary">WSAudiology</a></p>        
-        <p> Here at WSA, I get to work on a fitting software which is used for configuration of hearing aids.
-        </p>
-        
-        <p> Currently exploring the world of microservices and distributed systems..
-        </p>
-        <p>My work majorly involves writing code in C#(.NET Core, ASP.NET), JavaScript(ReactJS, Kendo UI) and SQL(MySQL, SQL Server)</p>
-    </section>
-    <section class="section ow">
-        <h1>technologies</h1>
-        <p> .NET, C#, C++</p>
-        <p>HTML, CSS, JavaScript</p>
-        <p>ReactJS, NodeJS, Kendo UI</p> 
-        <p>MySQL, SQL Server</p>
-        <div class="image-container">
-                    <img src="./images/NET_Core_Logo.svg" style="height:10%;width:10%" alt="">
-                    <img src="./images/c-sharp.png" style="height:10%;width:10%" alt="">
-                    <img src="./images/c-.png" style="height:10%;width:10%" alt="">
-                    <img src="./images/html-5.png" style="height:10%;width:10%" alt="">
-                    <img src="./images/css.png" style="height:10%;width:10%" alt="">
-                    <img src="./images/js.png" style="height:10%;width:10%" alt="">
-                    <img src="./images/react.png" style="height:10%;width:10%" alt="">
-                    <img src="./images/nodejs.png" style="height:10%;width:10%" alt="">
-                    <img src="./images/sql-server.png" style="height:10%;width:10%" alt="">
-                    
+    <!-- ================= HERO ================= -->
+    <header class="hero container">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="hero-grid">
+            <div class="card hero-intro">
+                <p class="mono-label">&lt;hello-world /&gt;</p>
+                <h1 class="hero-name">Harsh <span class="gradient-text">Deshpande</span></h1>
+                <p class="hero-role">Senior Software Engineer <span class="accent">@</span> <a class="link-external" href="https://www.wsa.com/" target="_blank" rel="noopener">WSAudiology</a></p>
+                <p class="hero-tagline">Full-stack engineer in the <strong>.NET</strong> and <strong>React</strong> ecosystems — building cloud-native, event-driven platforms for hearing care. &ldquo;Little progress every day&hellip;&rdquo;</p>
+                <p class="hero-meta">
+                    <span class="meta-chip">📍 Hyderabad, India</span>
+                    <span class="meta-chip">🦻 hearing care · medical-device software</span>
+                </p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#experience">view my work</a>
+                    <a class="btn btn-ghost" href="https://github.com/Harsh-D" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                        github
+                    </a>
+                    <a class="btn btn-ghost" href="https://www.linkedin.com/in/harsh-deshpande-146bb6168/" target="_blank" rel="noopener">linkedin</a>
+                </div>
+            </div>
+
+            <div class="card terminal" aria-hidden="true">
+                <div class="term-bar">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                    <span class="term-title">harsh@dev — bash</span>
+                </div>
+                <pre class="term-body"><code id="term-output"></code><span class="cursor">▊</span></pre>
+            </div>
         </div>
-    </section>
 
-    <section class="section">
-        <h1>projects</h1>
-        <p>I have published few projects. Do let me know your feedback and where I can improve..</p>
-        <a href="/projects.html" class="link link-primary">BROWSE PROJECTS</a>
-    </section>
+        <div class="hero-stats">
+            <div class="card stat-card reveal">
+                <span class="stat-number">5<span class="accent">+</span></span>
+                <span class="stat-label">years of experience</span>
+            </div>
+            <div class="card stat-card reveal">
+                <span class="stat-number">39</span>
+                <span class="stat-label">public repos</span>
+            </div>
+            <div class="card stat-card reveal">
+                <span class="stat-number">10<span class="accent">+</span></span>
+                <span class="stat-label">tech areas</span>
+            </div>
+        </div>
+    </header>
 
-    <section class="section ow">
-        <h1>blogs</h1>
-        <p>I am working on some technical and non-technical blogs.</p>
-        <a href="/blogs.html" class="link link-primary">READ BLOGS</a>
-    </section>
+    <!-- ================= MARQUEE ================= -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <span>DDD <i>◆</i> SAGAS <i>◆</i> EVENT BUS <i>◆</i> SIGNALR <i>◆</i> KUBERNETES <i>◆</i> GITOPS <i>◆</i> AZURE <i>◆</i> BICEP <i>◆</i> TERRAFORM <i>◆</i> BDD <i>◆</i> MCP <i>◆</i> AGENTIC WORKFLOWS <i>◆</i> CONTRACT-FIRST APIS <i>◆</i> OBSERVABILITY <i>◆</i></span>
+            <span>DDD <i>◆</i> SAGAS <i>◆</i> EVENT BUS <i>◆</i> SIGNALR <i>◆</i> KUBERNETES <i>◆</i> GITOPS <i>◆</i> AZURE <i>◆</i> BICEP <i>◆</i> TERRAFORM <i>◆</i> BDD <i>◆</i> MCP <i>◆</i> AGENTIC WORKFLOWS <i>◆</i> CONTRACT-FIRST APIS <i>◆</i> OBSERVABILITY <i>◆</i></span>
+        </div>
+    </div>
 
-    <section class="section">
-        <h1>education</h1>
-        <p>I have graduated from IIIT Nagpur(2021) in Electronics and communications engineering.</p>
-        <p>Know more about me through my social media accounts. You can find them below.</p>
-    </section>
+    <main class="container">
 
+        <!-- ================= ABOUT ================= -->
+        <section id="about" class="section">
+            <h2 class="section-title reveal"><span class="mono-label">##</span> about-me</h2>
+            <div class="bento-2">
+                <div class="card reveal">
+                    <h3 class="card-title">whoami</h3>
+                    <p>Full-stack engineer with <strong>5+ years</strong> in the <strong>.NET</strong> and <strong>React</strong> ecosystems. At WSAudiology I build cloud-native, event-driven platforms for hearing care — <strong>C# / .NET</strong> microservices on the backend, <strong>React + TypeScript</strong> on the frontend, shipped through <strong>Kubernetes, GitOps, and Infrastructure-as-Code on Azure</strong>.</p>
+                    <p>I enjoy scalable, high-performance architecture, clean object-oriented design, and the kind of test automation that lets regulated medical-device software move fast without breaking things.</p>
+                </div>
+                <div class="card reveal">
+                    <h3 class="card-title">currently focused on</h3>
+                    <ul class="check-list">
+                        <li>Building scalable, cloud-enabled applications</li>
+                        <li>Improving software architecture and engineering practices</li>
+                        <li>Performance optimization and application reliability</li>
+                        <li>Intent-first AI delegation — real engineering work handed to AI agents, with decisions kept observable and auditable</li>
+                    </ul>
+                    <div class="cert-row">
+                        <span class="pill">📜 GfG · OOD &amp; Design Patterns</span>
+                        <span class="pill">📜 Coursera · Relational DB &amp; SQL</span>
+                    </div>
+                </div>
+                <div class="card quote-card reveal">
+                    <blockquote>&ldquo;I love working on technology that makes a real impact on people&rsquo;s lives — at WSAudiology I contribute to products that improve hearing care experiences worldwide.&rdquo;</blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= EXPERIENCE ================= -->
+        <section id="experience" class="section">
+            <h2 class="section-title reveal"><span class="mono-label">##</span> experience</h2>
+            <div class="timeline">
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="card timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Senior Engineer I, Software Development</h3>
+                                <p class="company">WSAudiology · Hyderabad</p>
+                            </div>
+                            <span class="year-badge">2025 — present</span>
+                        </div>
+                        <ul class="bullet-list">
+                            <li>Designing and building <strong>microservices around Domain-Driven Design</strong> — bounded contexts, aggregate roots, domain events</li>
+                            <li>Orchestrating long-running workflows with <strong>sagas</strong> and message consumers over an event bus</li>
+                            <li>Driving <strong>AI-assisted engineering</strong> across the team — GitHub Copilot agents, MCP servers, and agent skills</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="pill">C#</span><span class="pill">.NET</span><span class="pill">DDD</span><span class="pill">MassTransit</span><span class="pill">Kubernetes</span><span class="pill">Azure</span><span class="pill">GitOps</span><span class="pill">Bicep</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="card timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Software Engineer</h3>
+                                <p class="company">WSAudiology · Hyderabad</p>
+                            </div>
+                            <span class="year-badge">2023 — 2025</span>
+                        </div>
+                        <ul class="bullet-list">
+                            <li>Built rich, real-time <strong>React SPAs</strong> — server-state caching, live updates over <strong>SignalR</strong>, offline-tolerant telemetry</li>
+                            <li>Automated quality end-to-end: unit, contract, <strong>BDD, UI, and desktop E2E tests</strong> across multiple regions and environments</li>
+                            <li>Collaborated with global engineering teams on a fitting platform used to configure hearing aids</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="pill">React</span><span class="pill">TypeScript</span><span class="pill">SignalR</span><span class="pill">Reqnroll</span><span class="pill">WebdriverIO</span><span class="pill">Appium</span><span class="pill">Azure DevOps</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="card timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Software Engineer</h3>
+                                <p class="company">BIZSENSE Solutions · Nagpur</p>
+                            </div>
+                            <span class="year-badge">2021 — 2023</span>
+                        </div>
+                        <ul class="bullet-list">
+                            <li>Delivered full-stack features across client engagements — from web UI to APIs and SQL</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="pill">.NET</span><span class="pill">JavaScript</span><span class="pill">SQL</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="card timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Software Engineer Intern</h3>
+                                <p class="company">BIZSENSE Solutions · Nagpur</p>
+                            </div>
+                            <span class="year-badge">2020</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="card timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Summer Intern</h3>
+                                <p class="company">Micropro Software Solutions · Nagpur</p>
+                            </div>
+                            <span class="year-badge">2019</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+            <p class="section-foot mono-label reveal">🎓 B.Tech ECE, IIIT Nagpur (2017–2021)</p>
+        </section>
+
+        <!-- ================= SKILLS ================= -->
+        <section id="skills" class="section">
+            <h2 class="section-title reveal"><span class="mono-label">##</span> technical-arsenal</h2>
+            <div class="skills-grid">
+                <div class="card skill-card skill-wide reveal">
+                    <h3 class="skill-icon">🦻</h3>
+                    <h4>Domain — Hearing Care &amp; Medical-Device Software</h4>
+                    <div class="tech-stack">
+                        <span class="pill">Audiograms</span><span class="pill">Prescriptive Target Calculation</span><span class="pill">Feedback Testing</span><span class="pill">Firmware Upgrades</span><span class="pill">Device Data-Logging</span><span class="pill">Acoustic Configuration</span>
+                    </div>
+                </div>
+                <div class="card skill-card reveal">
+                    <h3 class="skill-icon">🗣️</h3>
+                    <h4>Languages</h4>
+                    <div class="tech-stack"><span class="pill">C#</span><span class="pill">TypeScript</span><span class="pill">JavaScript</span><span class="pill">SQL</span><span class="pill">C++</span><span class="pill">PowerShell</span></div>
+                </div>
+                <div class="card skill-card reveal">
+                    <h3 class="skill-icon">⚙️</h3>
+                    <h4>Backend</h4>
+                    <div class="tech-stack"><span class="pill">.NET 10 / 8</span><span class="pill">ASP.NET Core</span><span class="pill">REST APIs</span><span class="pill">MassTransit</span><span class="pill">MediatR</span><span class="pill">FluentValidation</span><span class="pill">Mapster</span><span class="pill">LanguageExt</span><span class="pill">Swagger / OpenAPI</span><span class="pill">Feature Management</span></div>
+                </div>
+                <div class="card skill-card reveal">
+                    <h3 class="skill-icon">🎨</h3>
+                    <h4>Frontend</h4>
+                    <div class="tech-stack"><span class="pill">React</span><span class="pill">Vite</span><span class="pill">TanStack Query</span><span class="pill">Zustand</span><span class="pill">Zod</span><span class="pill">React Router</span><span class="pill">MUI</span><span class="pill">Emotion</span><span class="pill">Sass</span><span class="pill">Recharts</span><span class="pill">dnd-kit</span></div>
+                </div>
+                <div class="card skill-card reveal">
+                    <h3 class="skill-icon">🔐</h3>
+                    <h4>Real-time &amp; Auth</h4>
+                    <div class="tech-stack"><span class="pill">SignalR</span><span class="pill">OIDC / OAuth 2.0</span><span class="pill">Auth0</span><span class="pill">Claims-based Authorization</span></div>
+                </div>
+                <div class="card skill-card reveal">
+                    <h3 class="skill-icon">🗄️</h3>
+                    <h4>Data</h4>
+                    <div class="tech-stack"><span class="pill">SQL</span><span class="pill">Relational Databases</span><span class="pill">Azure Storage</span></div>
+                </div>
+                <div class="card skill-card reveal">
+                    <h3 class="skill-icon">☁️</h3>
+                    <h4>Cloud &amp; DevOps</h4>
+                    <div class="tech-stack"><span class="pill">Azure</span><span class="pill">Azure DevOps</span><span class="pill">Kubernetes</span><span class="pill">GitOps</span><span class="pill">Docker</span><span class="pill">Bicep</span><span class="pill">Terraform</span></div>
+                </div>
+                <div class="card skill-card reveal">
+                    <h3 class="skill-icon">📈</h3>
+                    <h4>Observability</h4>
+                    <div class="tech-stack"><span class="pill">Application Insights</span><span class="pill">Custom Events</span><span class="pill">Offline Channel / Retry</span></div>
+                </div>
+                <div class="card skill-card reveal">
+                    <h3 class="skill-icon">🧪</h3>
+                    <h4>Testing</h4>
+                    <div class="tech-stack"><span class="pill">xUnit v3</span><span class="pill">NSubstitute</span><span class="pill">AutoFixture</span><span class="pill">Reqnroll (BDD)</span><span class="pill">Cucumber</span><span class="pill">WebdriverIO</span><span class="pill">Appium</span><span class="pill">Puppeteer</span><span class="pill">Testing Library</span></div>
+                </div>
+                <div class="card skill-card reveal">
+                    <h3 class="skill-icon">🛡️</h3>
+                    <h4>Code Quality</h4>
+                    <div class="tech-stack"><span class="pill">ESLint</span><span class="pill">Stylelint</span><span class="pill">Roslyn Analyzers</span><span class="pill">dependency-cruiser</span><span class="pill">knip</span><span class="pill">Code-owner Policies</span></div>
+                </div>
+                <div class="card skill-card reveal">
+                    <h3 class="skill-icon">🧰</h3>
+                    <h4>Tools</h4>
+                    <div class="tech-stack"><span class="pill">Git</span><span class="pill">VS Code</span><span class="pill">IntelliJ IDEA</span><span class="pill">GitHub Copilot</span><span class="pill">MCP</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PROJECTS ================= -->
+        <section id="projects" class="section">
+            <h2 class="section-title reveal"><span class="mono-label">##</span> featured-projects</h2>
+            <div class="projects-grid">
+
+                <article class="card project-card reveal">
+                    <div class="project-top">
+                        <span class="project-tag">react · typescript</span>
+                        <div class="project-links">
+                            <a href="https://logn-trivia.netlify.app/" target="_blank" rel="noopener" aria-label="Open LogN-Trivia live">↗ live</a>
+                            <a href="https://github.com/Harsh-D/quiz-app" target="_blank" rel="noopener" aria-label="LogN-Trivia source code">⌥ source</a>
+                        </div>
+                    </div>
+                    <h3>LogN-Trivia</h3>
+                    <p>A quiz application built with ReactJS and TypeScript — test yourself across categories with instant scoring.</p>
+                </article>
+
+                <article class="card project-card reveal">
+                    <div class="project-top">
+                        <span class="project-tag">mern</span>
+                        <div class="project-links">
+                            <a href="https://logn-video.netlify.app/" target="_blank" rel="noopener" aria-label="Open LogN-Video live">↗ live</a>
+                            <a href="https://github.com/Harsh-D/videolibrary" target="_blank" rel="noopener" aria-label="LogN-Video source code">⌥ source</a>
+                        </div>
+                    </div>
+                    <h3>LogN-Video</h3>
+                    <p>Full-stack video library serving YouTube videos with playlists, watch history and liked videos. Built on the MERN stack.</p>
+                </article>
+
+                <article class="card project-card reveal">
+                    <div class="project-top">
+                        <span class="project-tag">mern</span>
+                        <div class="project-links">
+                            <a href="https://logn-shop.netlify.app/" target="_blank" rel="noopener" aria-label="Open LogN-Shop live">↗ live</a>
+                            <a href="https://github.com/Harsh-D/ecommerce" target="_blank" rel="noopener" aria-label="LogN-Shop source code">⌥ source</a>
+                        </div>
+                    </div>
+                    <h3>LogN-Shop</h3>
+                    <p>Full-stack e-commerce app with product showcase, wishlist and cart. Built on the MERN stack.</p>
+                </article>
+
+                <article class="card project-card reveal">
+                    <div class="project-top">
+                        <span class="project-tag">html · css · js</span>
+                        <div class="project-links">
+                            <a href="https://lognui.netlify.app/" target="_blank" rel="noopener" aria-label="Open LogNUI live">↗ live</a>
+                            <a href="https://github.com/Harsh-D/component-library" target="_blank" rel="noopener" aria-label="LogNUI source code">⌥ source</a>
+                        </div>
+                    </div>
+                    <h3>LogNUI</h3>
+                    <p>A component library of CSS classes for unified styling across projects — the design system that powered the LogN apps.</p>
+                </article>
+
+                <a class="card project-card project-more reveal" href="https://github.com/Harsh-D?tab=repositories" target="_blank" rel="noopener">
+                    <span class="project-more-text">see all 39 repos on GitHub</span>
+                    <span class="project-more-arrow">→</span>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- ================= CONTACT ================= -->
+        <section id="contact" class="section">
+            <div class="card contact-card reveal">
+                <p class="mono-label">&lt;contact /&gt;</p>
+                <h2 class="contact-heading">let&rsquo;s build something <span class="gradient-text">together</span></h2>
+                <p class="contact-sub">Open to interesting conversations about architecture, distributed systems, hearing care and AI-assisted engineering.</p>
+                <div class="hero-actions contact-actions">
+                    <a class="btn btn-primary" href="https://www.linkedin.com/in/harsh-deshpande-146bb6168/" target="_blank" rel="noopener">linkedin</a>
+                    <a class="btn btn-ghost" href="https://github.com/Harsh-D" target="_blank" rel="noopener">github</a>
+                    <a class="btn btn-ghost" href="https://x.com/Harshdeshpande5" target="_blank" rel="noopener">x / twitter</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
     <footer class="footer">
-        <div class="footer-header">I'd be glad to connect with you :)</div>
-        <ul class="list-non-bullet">
-            <li>
-                <a href="https://www.twitter.com/Harshdeshpande5" class="link">
-                    <img src="./images/twitter.svg" class="social-icon"> twitter</a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/harsh-deshpande-146bb6168/" class="link"> <img
-                        src="./images/linkedin.svg" class="social-icon"> LinkedIn</a>
-            </li>
-            <li>
-                <a href="https://www.github.com/Harsh-D" class="link"><img src="./images/github.svg"
-                        class="social-icon github"> github</a>
-            </li>
-            <!-- <li>
-                <a href="https://www.flaticon.com/free-icons/html" title="html icons" class="link">Html icons created by Pixel perfect - Flaticon</a>        
-            </li> -->
-        </ul>
+        <p class="footer-quote">&ldquo;Little progress every day&hellip;&rdquo;</p>
+        <p class="footer-meta">© 2026 Harsh Deshpande · built with plain HTML/CSS/JS and a lot of <span class="accent">#6F00FF</span></p>
     </footer>
+
 </body>
 </html>
